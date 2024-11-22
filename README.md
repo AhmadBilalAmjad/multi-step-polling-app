@@ -41,3 +41,17 @@ git clone https://github.com/AhmadBilalAmjad/multi-step-polling-app.git
 npm install
 # or
 yarn install
+```
+
+3. Start the development server:
+```bash
+npm start
+# or
+yarn start
+```
+4. Run tests:
+```bash
+npm run test
+# or
+yarn test
+```

@@ -1,15 +1,21 @@
-export interface Option {
+interface Option {
   icon: string
   label: string
   value: string
 }
 
-export interface Step {
+interface Step {
   title: string
   options: Option[]
 }
 
-export interface PollFormProps {
+interface PollFormProps {
   steps: Step[]
-  onSubmit: (answers: Record<string, string>) => Promise<void>
-} 
+}
+
+interface PollAnswer {
+  answer: string;
+  questionTitle: string;
+}
+
+export type { Option, Step, PollFormProps, PollAnswer };

@@ -19,31 +19,24 @@ export default function Home() {
         { icon: '👍', label: 'Somewhat', value: 'somewhat' },
         { icon: '😴', label: 'Not at all', value: 'not' }
       ]
+    },
+    {
+      title: 'What did you do well?',
+      options: [
+        { icon: '🚀', label: 'Very', value: 'very' },
+        { icon: '👍', label: 'Somewhat', value: 'somewhat' },
+        { icon: '😴', label: 'Not at all', value: 'not' }
+      ]
+    },
+    {
+      title: 'What did you do poorly?',
+      options: [
+        { icon: '👎', label: 'Very', value: 'very' },
+        { icon: '👍', label: 'Somewhat', value: 'somewhat' },
+        { icon: '😴', label: 'Not at all', value: 'not' }
+      ]
     }
   ]
-
-  const handleSubmit = async (answers: Record<string, string>) => {
-    try {
-      // Simulate API call to mock server
-      const response = await fetch('/api/submit-poll', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(answers),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit poll');
-      }
-
-      const data = await response.json();
-      console.log('Poll submitted successfully:', data);
-    } catch (error) {
-      console.error('Error submitting poll:', error);
-      throw error;
-    }
-  }
 
   return (
     <ErrorBoundary
@@ -54,7 +47,7 @@ export default function Home() {
         </div>
       }
     >
-      <MultiStepPoll steps={pollSteps} onSubmit={handleSubmit} />
+      <MultiStepPoll steps={pollSteps} />
     </ErrorBoundary>
   )
 }
